@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta content-type="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catan Randomizer</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="" />
   </head>
+  <script src="index.js"></script>
   <body>
     <h1>Catan Board Generator</h1>
     <section id="description-content">
-      <div class="board-type-classic">
-        <label for="">Regular</label>
-      </div>
-      <div class="board-type-expansion">
-        <label for="">Expansion</label>
-      </div>
+      <input type="radio" id="regular" checked="checked">
+        <label for="regular">Regular</label></br>
+        <input type="radio" id="expansion">
+        <label for="expansion">Expansion</label>
     </section>
     <div class="user-instructions">
       <p>
@@ -25,7 +25,7 @@
       </p>
     </div>
     <section id="button-options"></section>
-    <button class ="button" onclick="shuffle()">Shuffle</button>
-    <script src="index.js"></script>
+    <button type ="button" onclick="init()">Shuffle</button>
+    <div id="display"></div>
   </body>
 </html>
