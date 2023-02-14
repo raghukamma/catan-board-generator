@@ -59,7 +59,8 @@ class Game{
 
 function displayBoard(game){
   console.log("This is display board function");
-  var displayStr = "";
+  //var displayStr = "";
+  var displayStr = "<div id='board'><div id='dispaly'><img class='border' src='./images/border.png'>";
 
   for (var i = 0; i < game.pieces.length; i++){
     var piece = game.pieces[i];
