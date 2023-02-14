@@ -11,21 +11,32 @@
   </head>
   <script src="index.js"></script>
   <body>
-    <h1>Catan Board Generator</h1>
-    <section id="description-content">
-      <input type="radio" id="regular" checked="checked">
-        <label for="regular">Regular</label></br>
-        <input type="radio" id="expansion">
-        <label for="expansion">Expansion</label>
-    </section>
-    <div class="user-instructions">
-      <p>
-        Click the below button to initialize the randomizer and generate a game
-        board
-      </p>
-    </div>
-    <section id="button-options"></section>
-    <button type ="button" onclick="init()">Shuffle</button>
-    <div id="display"></div>
+    <main>
+      <h1>Catan Board Generator</h1>
+      <div class="description-content">
+        <fieldset>
+          <legend>
+            <div>Which game board would you like to generate?</div>
+          </legend>
+          <div class="board-options">
+            <input type="radio" name="radioAnswer" id="regular" checked="checked">
+            <label for="regular">Regular</label></br>        
+          </div>
+          <div class="board-options">
+            <input type="radio" name="radioAnswer" id="expansion">
+            <label for="expansion">Expansion</label>          
+          </div>
+        </fieldset>
+      </div>
+      <div class="user-instructions">
+        <p>
+          Click the below button to initialize the randomizer and generate a game
+          board
+        </p>
+      </div>
+      <section id="button-options"></section>
+      <button type ="button" onclick="init()">Shuffle</button>
+      <div id="display"></div>
+    </main>
   </body>
 </html>

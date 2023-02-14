@@ -1,27 +1,38 @@
 .tile {
-	width: 152px;
-	margin-right: -2px;
-	height: 185px;
-	display: inline-block;
-	vertical-align: top;
+  width: 152px;
+  margin-right: -2px;
+  height: 185px;
+  display: inline-block;
+  vertical-align: top;
 
-	background-size: cover;
+  background-size: cover;
 }
 
 div.row {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 }
 
 div.row:not(:first-child) {
-	margin-top: -45px;
+  margin-top: -45px;
 }
 
 button {
-    color: antiquewhite;
-    background-color: black;
+  color: antiquewhite;
+  background-color: black;
 }
 
 #display {
-    background-color: aliceblue;
+  background-color: aliceblue;
+}
+
+div.description-content {
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1.5px solid var(--gray3);
+  display: block;
+  text-align: left;
 }
