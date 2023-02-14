@@ -1,5 +1,5 @@
-var allResources = ["desert","brick","brick","brick","wood","wood","wood","wood","stone","stone","stone","sheep","sheep","sheep","sheep","grain","grain","grain","grain"];
-var tileTypes = ["desert", "brick", "wood", "stone", "sheep", "grain"];
+var allResources = ["desert","brick","brick","brick","wood","wood","wood","wood","ore","ore","ore","sheep","sheep","sheep","sheep","grain","grain","grain","grain"];
+var tileTypes = ["desert", "brick", "wood", "ore", "sheep", "grain"];
 
 function init(){
   console.log("In init function");
