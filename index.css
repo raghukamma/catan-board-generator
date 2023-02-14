@@ -1,0 +1,27 @@
+.tile {
+	width: 152px;
+	margin-right: -2px;
+	height: 185px;
+	display: inline-block;
+	vertical-align: top;
+
+	background-size: cover;
+}
+
+div.row {
+	display: block;
+	text-align: center;
+}
+
+div.row:not(:first-child) {
+	margin-top: -45px;
+}
+
+button {
+    color: antiquewhite;
+    background-color: black;
+}
+
+#display {
+    background-color: aliceblue;
+}
