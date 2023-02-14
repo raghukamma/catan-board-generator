@@ -17,7 +17,7 @@ div.row:not(:first-child) {
 	margin-top: -45px;
 }
 
-.button {
+button {
     color: antiquewhite;
     background-color: black;
 }
