@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta content-type="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catan Randomizer</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="" />
-</head>
-<script src="index.js"></script>
-
-<body>
-  <h1>Catan Board Generator</h1>
-  <section id="description-content">
-    <input type="radio" id="regular" checked="checked">
-    <label for="regular">Regular</label></br>
-
-    <input type="radio" id="expansion">
-    <label for="expansion">Expansion</label></br>
-  </br>
-    <button type="button" onclick="init()">Shuffle</button> 
-  </section>
-  <div class="user-instructions">
-    <p>
-      Click the below button to initialize the randomizer and </br>generate a game
-      board
-    </p>
-  </div>
-  <section id="button-options"></section>
-
-  <div id="display"></div>
-</body>
-
+  <head>
+    <meta content-type="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catan Randomizer</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <script src="index.js"></script>
+  <body>
+    <main>
+      <h1>Catan Board Generator</h1>
+      <div class="description-content">
+        <fieldset>
+          <legend>
+            <div>Which game board would you like to generate?</div>
+          </legend>
+          <div class="board-options">
+            <input type="radio" name="radioAnswer" id="regular" checked="checked">
+            <label for="regular">Regular</label></br>        
+          </div>
+          <div class="board-options">
+            <input type="radio" name="radioAnswer" id="expansion">
+            <label for="expansion">Expansion</label>          
+          </div>
+        </fieldset>
+      </div>
+      <div class="user-instructions">
+        <p>
+          Click the below button to initialize the randomizer and generate a game
+          board
+        </p>
+      </div>
+      <section id="button-options"></section>
+      <button type ="button" onclick="init()">Shuffle</button>
+      <div id="display"></div>
+    </main>
+  </body>
 </html>

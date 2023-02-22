@@ -16,16 +16,15 @@ button {
   width: 994px;
   top: -90px;
   left: 19%;
-
-
 }
 
 .tile {
   width: 152px;
   margin-right: -2px;
-  height: 172px;
+  height: 185px;
   display: inline-block;
   vertical-align: top;
+
   background-size: cover;
 }
 
@@ -35,5 +34,25 @@ div.row {
 }
 
 div.row:not(:first-child) {
-  margin-top: -43px;
+  margin-top: -45px;
+}
+
+button {
+  color: antiquewhite;
+  background-color: black;
+}
+
+#display {
+  background-color: aliceblue;
+}
+
+div.description-content {
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1.5px solid var(--gray3);
+  display: block;
+  text-align: left;
 }
