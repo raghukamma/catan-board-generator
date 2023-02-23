@@ -59,7 +59,8 @@ class Game{
 
 function displayBoard(game){
   console.log("This is display board function");
-  var displayStr = "";
+  //var displayStr = "";
+  var displayStr = "<img class='border' src='./images/border.png' alt='border-image'>";
 
   for (var i = 0; i < game.pieces.length; i++){
     var piece = game.pieces[i];
@@ -72,5 +73,6 @@ function displayBoard(game){
   }
 
   console.log(displayStr);
+  // document.getElementById('display').style.display = "block";
   document.getElementById('display').innerHTML = displayStr;
 }
