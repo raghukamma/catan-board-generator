@@ -104,7 +104,9 @@ function displayBoard(game) {
         piece.number +
         "' style='background-image: url(\"images/" +
         piece.type +
-        ".png\");'></span>";
+        '.png"); color: ' +
+        (piece.number == 6 || piece.number == 8 ? "red" : "black") + //sets color of the text on the tile base dn the value of piece.number i.e., coloring red if 6 or 8, otherwise black
+        "'></span>";
     } else {
       displayStr +=
         "<span class='tile' style='background-image: url(\"./images/desert.png\")'></span>";
