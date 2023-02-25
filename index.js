@@ -102,10 +102,12 @@ function displayBoard(game) {
       displayStr +=
         "<span class='tile' probability='" +
         piece.number +
+        "' numberOfDots='" +
+        Array(6 - Math.abs(piece.number - 7) + 1).join(".") + 
         "' style='background-image: url(\"images/" +
         piece.type +
         '.png"); color: ' +
-        (piece.number == 6 || piece.number == 8 ? "red" : "black") + //sets color of the text on the tile base dn the value of piece.number i.e., coloring red if 6 or 8, otherwise black
+        (piece.number == 6 || piece.number == 8 ? "red" : "black") + 
         "'></span>";
     } else {
       displayStr +=
