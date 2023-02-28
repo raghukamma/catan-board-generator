@@ -89,7 +89,7 @@ class Game {
 function displayBoard(game) {
   console.log("This is display board function");
   var displayStr =
-    "<img class='border' src='./images/border.png' alt='border-image'>";
+    "<img class='border' src='../images/border.png' alt='border-image'>";
 
   for (var i = 0; i < game.pieces.length; i++) {
     var piece = game.pieces[i];
@@ -104,14 +104,14 @@ function displayBoard(game) {
         piece.number +
         "' numberOfDots='" +
         Array(6 - Math.abs(piece.number - 7) + 1).join(".") + 
-        "' style='background-image: url(\"images/" +
+        "' style='background-image: url(\"../images/" +
         piece.type +
         '.png"); color: ' +
         (piece.number == 6 || piece.number == 8 ? "red" : "black") + 
         "'></span>";
     } else {
       displayStr +=
-        "<span class='tile' style='background-image: url(\"./images/desert.png\")'></span>";
+        "<span class='tile' style='background-image: url(\"../images/desert.png\")'></span>";
     }
   }
 
