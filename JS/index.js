@@ -1,4 +1,12 @@
 function init() {
+  if(document.getElementById('regular').checked) {
+    regular_init();
+  }
+  else if(document.getElementById('extension').checked) {
+  }
+}
+
+function regular_init() {
   var allResources = [
     "desert",
     "brick",
