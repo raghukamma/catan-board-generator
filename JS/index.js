@@ -119,3 +119,5 @@ function displayBoard(game) {
   // document.getElementById('display').style.display = "block";
   document.getElementById("display").innerHTML = displayStr;
 }
+module.exports= shuffle
+module.exports = Tile
