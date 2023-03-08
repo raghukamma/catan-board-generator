@@ -30,7 +30,7 @@ function regular_init() {
   ];
   var numbersOnBoard = [
     2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12,
-  ]; //all numbers that are visible on the game board, 18 elements, #7 is not part of this list
+  ]; 
 
   console.log("In init function");
   var game;
@@ -45,6 +45,19 @@ function regular_init() {
 
 function generateNewBoard(allResources, numbersOnBoard) {
   console.log("In random game generation function");
+
+  if(allResources.length != 19){
+    throw new Error('Length of allResources array should be 19');
+  }
+  if(numbersOnBoard.length != 18){
+    throw new Error('Length of numbersOnBoard array should be 18');
+  }
+  for(i=0; i<allResources.length; i++){
+    if(allResources[i] != 'desert' || 'brick' || 'grain' || 'ore' || 'sheep' || 'wood'){
+      throw new Error('Incorrect resource type');
+    }
+  }
+
   var board = shuffle(allResources);
   var shuffledNumbersOnBoard = shuffle(numbersOnBoard);
   var pieces = [];
@@ -124,6 +137,7 @@ function displayBoard(game) {
   }
 
   console.log(displayStr);
-  // document.getElementById('display').style.display = "block";
   document.getElementById("display").innerHTML = displayStr;
 }
+
+module.exports = generateNewBoard;
