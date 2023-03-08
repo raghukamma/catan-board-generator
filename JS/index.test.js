@@ -1,16 +1,33 @@
-const shuffle = require('./index.js');
-const Tile = require('./index.js');
+const { shuffle, Tile } = require("./index.js");
 
-test("shuffle function should shuffle the array in place", () => {
-        const original = [1, 2, 3, 4, 5];
-        const actual = new shuffle(original);
-        expect(actual).not.toBe(original);
-      });
+it("should shuffle the array in place", () => {
+  const array = [1, 2, 3, 4, 5];
+  const shuffled = shuffle(array);
+  expect(shuffled).toEqual(array); 
+});
 
-test("sets the type and number properties correctly",() => {
-    const tile=new Tile('wood',5);
-    expect(tile.type).toBe('wood');
-    expect(tile.number).toBe(5);
-})
+it("should shuffle the elements of the array randomly", () => {
+  const array = [1, 2, 3, 4, 5];
+  const shuffled = shuffle(array);
+  expect(shuffled).not.toEqual([3, 1, 2, 4, 5]);
+});
+
+it("should return the same array if it is empty", () => {
+  const array = [];
+  const shuffled = shuffle(array);
+  expect(shuffled).toEqual([]);
+});
+
+it("should return the same array if it contains only one element", () => {
+  const array = [1];
+  const shuffled = shuffle(array);
+  expect(shuffled).toEqual([1]);
+});
+
+test("sets the type and number properties correctly", () => {
+  const tile = new Tile("wood", 5);
+  expect(tile.type).toBe("wood");
+  expect(tile.number).toBe(5);
+});
 
 
