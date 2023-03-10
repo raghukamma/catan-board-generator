@@ -1,4 +1,4 @@
-const { shuffle, Tile } = require("./index.js");
+const { shuffle, Tile, Game } = require("./index.js");
 
 it("should shuffle the array in place", () => {
   const array = [1, 2, 3, 4, 5];
@@ -30,4 +30,13 @@ test("sets the type and number properties correctly", () => {
   expect(tile.number).toBe(5);
 });
 
+test('should create game object with pieces array',() => {
+  const pieces = ["desert", "brick", "brick", "brick", "wood", "wood", "wood", "wood", "ore", "ore", "ore", "sheep", "sheep", "sheep", "sheep", "grain", "grain", "grain", "grain",];
+  const game = new Game(pieces);
+  expect(game.pieces).toEqual(pieces);
+})
 
+test('should create game object with pieces array',() => {
+  const game = new Game([]);
+  expect(game.pieces).toEqual([]);
+})

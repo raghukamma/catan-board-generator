@@ -119,4 +119,4 @@ function init() {
     // document.getElementById('display').style.display = "block";
     document.getElementById("display").innerHTML = displayStr;
   }
-  module.exports = { shuffle, Tile };
+  module.exports = { shuffle, Tile, Game };
