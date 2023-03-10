@@ -30,21 +30,32 @@ function regular_init() {
   ];
   var numbersOnBoard = [
     2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12,
-  ]; //all numbers that are visible on the game board, 18 elements, #7 is not part of this list
+  ]; 
 
-  console.log("In init function");
   var game;
 
   game = generateNewBoard(allResources, numbersOnBoard);
-  console.log("Creating random board");
-  console.log(game);
 
   displayBoard(game);
-  console.log("Displaying board");
 }
 
 function generateNewBoard(allResources, numbersOnBoard) {
-  console.log("In random game generation function");
+
+  if(allResources.length != 19){
+    throw new Error('Length of allResources array should be 19');
+  }
+  if(numbersOnBoard.length != 18){
+    throw new Error('Length of numbersOnBoard array should be 18');
+  }
+  for(i=0; i<allResources.length; i++){
+    if(allResources[i] === 'desert' || allResources[i] === 'brick' || allResources[i] === 'grain' || allResources[i] === 'ore' || allResources[i] === 'sheep' || allResources[i] === 'wood'){
+      continue;
+    }
+    else{
+      throw new Error('Incorrect resource type');
+    }
+  }
+
   var board = shuffle(allResources);
   var shuffledNumbersOnBoard = shuffle(numbersOnBoard);
   var pieces = [];
@@ -59,14 +70,12 @@ function generateNewBoard(allResources, numbersOnBoard) {
 }
 
 function shuffle(array) {
-  console.log("Inside shuffle function");
   var currentIndex = array.length,
     temporaryValue,
     randomIndex;
   console.log(currentIndex);
 
   while (0 !== currentIndex) {
-    console.log("In while");
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
 
@@ -81,7 +90,6 @@ function shuffle(array) {
 
 class Tile {
   constructor(type, number) {
-    console.log("Tile constructor called");
     this.type = type;
     this.number = number;
   }
@@ -89,13 +97,11 @@ class Tile {
 
 class Game {
   constructor(pieces) {
-    console.log("Inside Game constructor");
     this.pieces = pieces;
   }
 }
 
 function displayBoard(game) {
-  console.log("This is display board function");
   var displayStr =
     "<img class='border' src='../images/border.png' alt='border-image'>";
 
@@ -123,8 +129,6 @@ function displayBoard(game) {
     }
   }
 
-  console.log(displayStr);
-  // document.getElementById('display').style.display = "block";
   document.getElementById("display").innerHTML = displayStr;
 }
-module.exports = {shuffle ,Tile, Game}
+module.exports = generateNewBoard;
