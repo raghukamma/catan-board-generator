@@ -53,7 +53,11 @@ function generateNewBoard(allResources, numbersOnBoard) {
     throw new Error('Length of numbersOnBoard array should be 18');
   }
   for(i=0; i<allResources.length; i++){
-    if(allResources[i] != 'desert' || 'brick' || 'grain' || 'ore' || 'sheep' || 'wood'){
+    if(allResources[i] === 'desert' || allResources[i] === 'brick' || allResources[i] === 'grain' || allResources[i] === 'ore' || allResources[i] === 'sheep' || allResources[i] === 'wood'){
+      console.log(allResources[i]);
+      continue;
+    }
+    else{
       throw new Error('Incorrect resource type');
     }
   }
