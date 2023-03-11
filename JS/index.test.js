@@ -1,4 +1,4 @@
-const generateNewBoard = require('./index.js');
+const {Tile, shuffle,generateNewBoard} = require('./index.js');
 
 test("Test case to validate the allResources array length", () => {
     var allResources = ["desert", "brick", "brick", "brick", "wood", "wood", "wood", "wood", "ore", "ore", "ore", "sheep", "sheep", "sheep", "sheep", "grain", "grain", "grain"];
@@ -23,3 +23,20 @@ test("Test case to validate the resource type in allResource array", () => {
         generateNewBoard(allResources, numbersOnBoard);
     }).toThrow("Incorrect resource type");
 })
+
+test("sets the type and number properties correctly", () => {
+    const tile = new Tile("wood", 5);
+    expect(tile.type).toBe("wood");
+    expect(tile.number).toBe(5);
+  });
+  it("should shuffle the array in place", () => {
+    const array = [1, 2, 3, 4, 5];
+    const shuffled = shuffle(array);
+    expect(shuffled).toEqual(array); 
+  });
+  
+  it("should shuffle the elements of the array randomly", () => {
+    const array = [1, 2, 3, 4, 5];
+    const shuffled = shuffle(array);
+    expect(shuffled).not.toEqual([3, 1, 2, 4, 5]);
+  });

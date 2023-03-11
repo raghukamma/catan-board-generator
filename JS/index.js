@@ -131,5 +131,4 @@ function displayBoard(game) {
 
   document.getElementById("display").innerHTML = displayStr;
 }
-
-module.exports = generateNewBoard;
+module.exports = {Tile,generateNewBoard,shuffle};
