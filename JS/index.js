@@ -1,8 +1,7 @@
 function init() {
-  if(document.getElementById('regular').checked) {
+  if (document.getElementById("regular").checked) {
     regular_init();
-  }
-  else if(document.getElementById('extension').checked) {
+  } else if (document.getElementById("extension").checked) {
   }
 }
 
@@ -30,7 +29,7 @@ function regular_init() {
   ];
   var numbersOnBoard = [
     2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12,
-  ]; 
+  ];
 
   var game;
 
@@ -40,19 +39,24 @@ function regular_init() {
 }
 
 function generateNewBoard(allResources, numbersOnBoard) {
-
-  if(allResources.length != 19){
-    throw new Error('Length of allResources array should be 19');
+  if (allResources.length != 19) {
+    throw new Error("Length of allResources array should be 19");
   }
-  if(numbersOnBoard.length != 18){
-    throw new Error('Length of numbersOnBoard array should be 18');
+  if (numbersOnBoard.length != 18) {
+    throw new Error("Length of numbersOnBoard array should be 18");
   }
-  for(i=0; i<allResources.length; i++){
-    if(allResources[i] === 'desert' || allResources[i] === 'brick' || allResources[i] === 'grain' || allResources[i] === 'ore' || allResources[i] === 'sheep' || allResources[i] === 'wood'){
+  for (i = 0; i < allResources.length; i++) {
+    if (
+      allResources[i] === "desert" ||
+      allResources[i] === "brick" ||
+      allResources[i] === "grain" ||
+      allResources[i] === "ore" ||
+      allResources[i] === "sheep" ||
+      allResources[i] === "wood"
+    ) {
       continue;
-    }
-    else{
-      throw new Error('Incorrect resource type');
+    } else {
+      throw new Error("Incorrect resource type");
     }
   }
 
@@ -73,8 +77,6 @@ function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
     randomIndex;
-  console.log(currentIndex);
-
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
@@ -83,8 +85,6 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
-  console.log(array);
   return array;
 }
 
@@ -117,11 +117,11 @@ function displayBoard(game) {
         "<span class='tile' probability='" +
         piece.number +
         "' numberOfDots='" +
-        Array(6 - Math.abs(piece.number - 7) + 1).join(".") + 
+        Array(6 - Math.abs(piece.number - 7) + 1).join(".") +
         "' style='background-image: url(\"../images/" +
         piece.type +
         '.png"); color: ' +
-        (piece.number == 6 || piece.number == 8 ? "red" : "black") + 
+        (piece.number == 6 || piece.number == 8 ? "red" : "black") +
         "'></span>";
     } else {
       displayStr +=
@@ -131,4 +131,4 @@ function displayBoard(game) {
 
   document.getElementById("display").innerHTML = displayStr;
 }
-module.exports = {Tile,generateNewBoard,shuffle};
+module.exports = { Tile, generateNewBoard, shuffle };
